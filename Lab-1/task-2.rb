@@ -1,4 +1,8 @@
-puts("Hello, #{ARGV[0]}")
+name = ARGV[0]
+puts "Привет, " + name + "!"
+puts "Привет ещё раз, #{name}"
+
+system("pause")
 
 puts("\n*:")
 puts("Hello! " * 3) #-> Hello! Hello! Hello!
