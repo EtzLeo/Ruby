@@ -1,7 +1,7 @@
 puts "Какой твой любимый язык?"
-language = gets
+language = gets.strip
 
-if language.downcase.strip == "ruby" then
+unless language.downcase != "ruby" then
 	puts "Ты подлиза!"
 else 
 	puts "Скоро будет Ruby! #{language} тебе больше не нужен!"
