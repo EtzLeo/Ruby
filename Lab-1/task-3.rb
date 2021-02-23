@@ -1,15 +1,15 @@
 puts "Какой твой любимый язык?"
 language = gets.strip
 
+res = ""
+
 unless language.downcase != "ruby" then
 	puts "Ты подлиза!"
 else 
-	unless language != "pascal"
-		puts "Да ты шутник!"
-	elsif language == "python"
-		puts "Отлично!"
-	elsif language == "c++"
-		puts "Не беспокойся!"
-	puts "Скоро будет Ruby!"
+	res = if language == "pascal" then
+		"Да ты шутник!"
+	else 
+		"#{language}? Не знаю такого языка."
 	end
+	puts res
 end
