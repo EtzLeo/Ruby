@@ -6,7 +6,7 @@ res = ""
 unless language.downcase != "ruby" then
 	puts "Ты подлиза!"
 else 
-	res = if language == "pascal" then
+	res = unless language != "pascal" then
 		"Да ты шутник!"
 	else 
 		"#{language}? Не знаю такого языка."
