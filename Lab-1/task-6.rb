@@ -23,7 +23,7 @@ def mult(num)
 	num.each{|n| mult = n * mult}
 	mult
 end
-p sum(num)
-p min(num)
-p max(num)
-p mult(num)
+p "sum of digits = #{sum(num)}"
+p "minimum of digits = #{min(num)}"
+p "maximum of digits = #{max(num)}"
+p "multiplication of digits = #{mult(num)}"
