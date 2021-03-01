@@ -1,5 +1,6 @@
 num = ARGV[0].to_i
-p num
+command = ARGV[1].to_i
+	
 def sum(num)
 	sum = 0
 	num.digits.each{|n| sum = sum + n}
@@ -25,10 +26,6 @@ def mult(num)
 	num.digits.each{|n| mult = n * mult}
 	mult
 end
-p "sum of digits = #{sum(num)}"
-p "minimum of digits = #{min(num)}"
-p "maximum of digits = #{max(num)}"
-p "multiplication of digits = #{mult(num)}"
 
 def prime(num)
 	for i in 2..num-1 do
@@ -45,15 +42,11 @@ def maxPrimeDiv(num) # максимальнй простой делитель
 	return max
 end
 
-p "maximum prime divisor = #{maxPrimeDiv(num)}"
-
 def multNotDel5(num) #произведение цифр числа, не делящихся на 5
 	mult = 1
 	num.digits.each{|n| mult = mult * n if n%5 != 0}
 	return mult
 end
-
-p "product of digits not divisor by 5 = #{multNotDel5(num)}"
 
 def nodCh(num) #НОД максимального нечетного непростого делителя
 #числа и прозведения цифр данного числа.
@@ -69,4 +62,21 @@ def nodCh(num) #НОД максимального нечетного непро�
 	return mult.gcd max #НОД
 end
 
-p "GCD = #{nodCh(num)}"
+case command
+when 1
+	puts "sum of digits = #{sum(num)}"
+when 2
+	puts "minimum of digits = #{min(num)}"
+when 3
+	puts "maximum of digits = #{max(num)}"
+when 4
+	puts "multiplication of digits = #{mult(num)}"
+when 5
+	puts "maximum prime divisor = #{maxPrimeDiv(num)}"
+when 6
+	puts "product of digits not divisor by 5 = #{multNotDel5(num)}"
+when 7
+	puts "GCD = #{nodCh(num)}"
+else
+	puts "hello world!"
+end
