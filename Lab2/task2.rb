@@ -7,4 +7,4 @@ list.each{|x| newList.append(x.to_i)}
 puts "Min: #{newList.min}"
 puts "Max: #{newList.max}"
 puts "Sum: #{newList.sum}"
-#TOODO multiplication puts "Mult: #{newList.???}"
+puts "Mult: #{newList.inject(:*)}"
