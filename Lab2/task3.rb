@@ -4,7 +4,9 @@ puts "Input numbers:"
 
 def readList(list, amount)
 	amount.times do |i|
-		list[i] = STDIN.gets.to_i
+		tmp =[]
+		tmp.push(STDIN.gets.to_i)
+		list.concat(tmp)
 	end
 end
 
