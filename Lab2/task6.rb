@@ -18,3 +18,20 @@ def task3 list, index
 	end
 	return true
 end
+	
+=begin
+Дан целочисленный массив и натуральный индекс (число, меньшее
+размера массива). Необходимо определить является ли элемент по
+указанному индексу локальным минимумом.
+локальный минимум — это элемент, который меньше любого из своих соседей
+=end
+
+def task15 list, index
+	if list.length - 1 < index || index < 0 then
+		puts "Неверный индекс"
+		return false
+	end
+	index_left = list[index] < list[index-1]
+	index_right = list[index] < list[index+1]
+	index_left == index_right
+end
