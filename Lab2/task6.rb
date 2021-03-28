@@ -35,3 +35,17 @@ def task15 list, index
 	index_right = list[index] < list[index+1]
 	index_left == index_right
 end
+
+=begin
+Дан целочисленный массив. Необходимо осуществить циклический
+сдвиг элементов массива влево на одну позицию.
+=end
+
+def task27 list
+	first = list[0]
+	(list.length - 1).times do |i|
+		list[i] = list[i+1]
+	end
+	list[-1] = first
+	list
+end
