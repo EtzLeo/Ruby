@@ -11,12 +11,7 @@ def task3 list, index
 		puts "Неверный индекс"
 		return false
 	end
-	list.length.times do |i|
-		if list[i] > list[index] then
-			return false
-		end
-	end
-	return true
+	list[index] == list.max
 end
 	
 =begin
@@ -31,9 +26,7 @@ def task15 list, index
 		puts "Неверный индекс"
 		return false
 	end
-	index_left = list[index] < list[index-1]
-	index_right = list[index] < list[index+1]
-	index_left == index_right && index_left == true
+	list[index-1 ... index+1].min == list[index]
 end
 
 =begin
@@ -42,12 +35,7 @@ end
 =end
 
 def task27 list
-	first = list[0]
-	(list.length - 1).times do |i|
-		list[i] = list[i+1]
-	end
-	list[-1] = first
-	list
+	list.rotate
 end
 
 =begin
@@ -56,12 +44,10 @@ end
 =end
 
 def task39 list
-	even = []
 	odd = []
-	(list.length).times do |i|
-		i.even? ? even.push(list[i]) : odd.push(list[i])
-	end
-	"#{odd} #{even}"
+	even = []
+	list.each_index {|i| i.odd? ? odd.push(list[i]) : even.push(list[i])}
+	even+odd
 end
 
 =begin
@@ -74,15 +60,9 @@ end
 def task51 list
 	list1 = []
 	list2 = []
+	list.each_index {|i| list1.include?(list[i]) ? i : list1.push(list[i])}
+	list1.each {|elem| list2.push(list.count(elem))}
 	
-	(list.length).times do |i|
-		if list1.include?(list[i]) then
-			list2[list1.index(list[i])] += 1
-		else
-			list1.push(list[i])
-			list2.push(1)
-		end
-	end
 	p list1
 	p list2
 end
