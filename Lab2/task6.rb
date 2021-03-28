@@ -49,3 +49,17 @@ def task27 list
 	list[-1] = first
 	list
 end
+
+=begin
+Дан целочисленный массив. Необходимо вывести вначале его
+элементы с четными индексами, а затем - с нечетными.
+=end
+
+def task39 list
+	even = []
+	odd = []
+	(list.length).times do |i|
+		list[i].even? ? even.push(list[i]) : odd.push(list[i])
+	end
+	"#{even} #{odd}"
+end
