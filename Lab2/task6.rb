@@ -63,3 +63,26 @@ def task39 list
 	end
 	"#{even} #{odd}"
 end
+
+=begin
+Для введенного списка построить два списка L1 и L2, где элементы L1
+это неповторяющиеся элементы исходного списка, а элемент списка L2 с
+номером i показывает, сколько раз элемент списка L1 с таким номером
+повторяется в исходном.
+=end
+
+def task51 list
+	list1 = []
+	list2 = []
+	
+	(list.length).times do |i|
+		if list1.include?(list[i]) then
+			list2[list1.index(list[i])] += 1
+		else
+			list1.push(list[i])
+			list2.push(1)
+		end
+	end
+	p list1
+	p list2
+end
