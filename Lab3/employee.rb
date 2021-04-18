@@ -46,16 +46,16 @@ class Employee
   end
 
   def to_s
-    "#{fullname}\n" +
-        "#{birth_year}\n" +
-        "#{phone}\n" +
-        "#{address}\n" +
-        "#{email}\n" +
-        "#{passport}\n" +
-        "#{speciality}\n" +
-        "#{experience}\n" +
-        "#{previous_work}\n" +
-        "#{position}\n" +
-        "#{wage}\n\n"
+    "ФИО: #{fullname}\n" +
+        "Дата рождения: #{birth_year}\n" +
+        "Номер телефона: #{phone}\n" +
+        "Адрес: #{address}\n" +
+        "Email: #{email}\n" +
+        "Серия и номер паспорта: #{passport}\n" +
+        "Специальность: #{speciality}\n" +
+        "Стаж работы по специальности: #{experience}\n" +
+        "Предыдущее место работы: #{previous_work}\n" +
+        "Должность: #{position}\n" +
+        "Зарплата на прошлой работе: #{wage}\n\n"
   end
 end
