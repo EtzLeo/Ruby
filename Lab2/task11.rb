@@ -13,3 +13,8 @@
 str = "Hello Привет hмk hhл"
 p str.scan(/[а-яА-Я]/).count
 
+str = "hello привет ПРИВеТ HeLLO"
+p str.scan(/[a-z]/)
+
+str = "12 3фыi56 3jd"
+p str.scan(/\d+/).map{|i| i.to_i}.min
