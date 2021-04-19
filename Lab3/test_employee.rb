@@ -10,7 +10,7 @@ class TestEmployee < Employee
 end
 
 ivan = TestEmployee.new("   Иванов-     Иванов Иван     -Иван   Иванович    Заде   ",
-                        "10.10.2000",
+                        "1.10.00",
                         "89001234567",
                         "ул. Красная, д. 1",
                         "ivankaban@mail.ru",

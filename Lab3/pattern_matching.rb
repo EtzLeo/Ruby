@@ -30,4 +30,15 @@ module PatternMatching
     fullname.strip.gsub(/\s+/, " ").gsub(/\s*[\-]\s*/, '-')
   end
 
+  def self.is_date?(date)
+    (/^\d{,2}\.\d{2}\.(\d{2}|\d{4})$/ =~ date) != nil
+  end
+
+  def self.convert_date(date)
+    raise ArgumentError, 'Некорректная дата' unless is_date? date
+    date.insert(0, "0") if date =~ /^\d\./
+    date.insert(-3, "20") if date =~ /\.\d{2}$/
+    date
+  end
+
 end
