@@ -1,9 +1,15 @@
+require_relative 'pattern_matching'
+
 class Employee
 
-  attr_accessor :fullname, :birth_year, :phone, :address, :email, :passport, :speciality
-  attr_reader :experience, :previous_work, :position, :wage
+  attr_accessor :fullname, :birth_year, :address, :email, :passport, :speciality
+  attr_reader :experience, :previous_work, :position, :wage, :phone
 
-  def expirience=(experience)
+  def phone=(phone)
+    @phone = PatternMatching.convert_phone(phone)
+  end
+
+  def experience=(experience)
     @experience = experience.to_i.zero? ? 0 : experience.to_i
   end
 
