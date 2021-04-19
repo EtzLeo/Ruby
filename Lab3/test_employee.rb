@@ -9,7 +9,7 @@ class TestEmployee < Employee
 
 end
 
-ivan = TestEmployee.new("Иванов Иван Иванович",
+ivan = TestEmployee.new("   Иванов -   Ив Иван -п   Иванович Заде   ",
                         "10.10.2000",
                         "89001234567",
                         "ул. Красная, д. 1",

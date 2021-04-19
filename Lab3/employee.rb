@@ -2,8 +2,8 @@ require_relative 'pattern_matching'
 
 class Employee
 
-  attr_accessor :fullname, :birth_year, :address, :passport, :speciality
-  attr_reader :experience, :previous_work, :position, :wage, :phone, :email
+  attr_accessor :birth_year, :address, :passport, :speciality
+  attr_reader :experience, :previous_work, :position, :wage, :phone, :email, :fullname
 
   def phone=(phone)
     @phone = PatternMatching.convert_phone(phone)
@@ -11,6 +11,10 @@ class Employee
 
   def email=(email)
     @email = PatternMatching.convert_email(email)
+  end
+
+  def fullname=(fullname)
+    @fullname = PatternMatching.convert_fullname(fullname)
   end
 
   def experience=(experience)
@@ -42,7 +46,7 @@ class Employee
                  position = '',
                  wage = 0)
 
-    @fullname = fullname
+    @fullname = PatternMatching.convert_fullname(fullname)
     @birth_year = birth_year
     @phone = phone
     @address = address

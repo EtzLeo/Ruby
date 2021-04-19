@@ -21,4 +21,14 @@ module PatternMatching
     email.downcase
   end
 
+  def self.is_fullname?(fullname)
+    #(/(\s*[А-ЯЁ][а-яё]+\s*[\-\s*]?)/ =~ fullname) != nil
+    (/\A(\s*[А-ЯЁа-яё]\s*[\-\s*]?(\s*[А-ЯЁа-яё])?){2}\s*[А-ЯЁа-яё]\s*[А-ЯЁа-яё]?\s*\z/ =~ fullname) != nil
+  end
+
+  def self.convert_fullname(fullname)
+    raise ArgumentError, 'Некорректный fio' unless is_fullname? fullname
+    fullname
+  end
+
 end
