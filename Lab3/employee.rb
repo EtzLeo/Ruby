@@ -46,7 +46,7 @@ class Employee
                  position = '',
                  wage = 0)
 
-    @fullname = PatternMatching.convert_fullname(fullname)
+    @fullname = fullname
     @birth_year = birth_year
     @phone = phone
     @address = address

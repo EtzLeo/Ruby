@@ -22,13 +22,12 @@ module PatternMatching
   end
 
   def self.is_fullname?(fullname)
-    #(/(\s*[А-ЯЁ][а-яё]+\s*[\-\s*]?)/ =~ fullname) != nil
-    (/\A(\s*[А-ЯЁа-яё]\s*[\-\s*]?(\s*[А-ЯЁа-яё])?){2}\s*[А-ЯЁа-яё]\s*[А-ЯЁа-яё]?\s*\z/ =~ fullname) != nil
+    (/^(\s*\b[А-ЯЁа-яё]+\b\s*([\-]\s*\b[А-ЯЁа-яё]+\b)?){2}\s*\b[А-ЯЁа-яё]+\b\s*(\b[А-ЯЁа-яё]+\b)?\s*$/ =~ fullname) != nil
   end
 
   def self.convert_fullname(fullname)
-    raise ArgumentError, 'Некорректный fio' unless is_fullname? fullname
-    fullname
+    raise ArgumentError, 'Некорректные ФИО' unless is_fullname? fullname
+    fullname.strip.gsub(/\s+/, " ").gsub(/\s*[\-]\s*/, '-')
   end
 
 end
