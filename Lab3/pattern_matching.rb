@@ -41,4 +41,13 @@ module PatternMatching
     date
   end
 
+  def self.is_passport?(passport)
+    (/^\s*\d{4}\s*\d{6}\s*$/ =~ passport) != nil
+  end
+
+  def self.convert_passport(passport)
+    raise ArgumentError, 'Некорректные паспортные данные' unless is_passport? passport
+    passport.strip.gsub(/\s+/, "").insert(4, " ")
+  end
+
 end
