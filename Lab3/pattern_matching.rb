@@ -28,6 +28,7 @@ module PatternMatching
   def self.convert_fullname(fullname)
     raise ArgumentError, 'Некорректные ФИО' unless is_fullname? fullname
     fullname.strip.gsub(/\s+/, " ").gsub(/\s*[\-]\s*/, '-')
+    fullname.split.map(&:capitalize).join(' ')
   end
 
   def self.is_date?(date)

@@ -54,17 +54,17 @@ class Employee
                  position = '',
                  wage = 0)
 
-    @fullname = fullname
-    @birth_year = birth_year
-    @phone = phone
+    @fullname = PatternMatching.convert_fullname(fullname)
+    @birth_year = PatternMatching.convert_date(birth_year)
+    @phone = PatternMatching.convert_phone(phone)
     @address = address
-    @email = email
-    @passport = passport
+    @email = PatternMatching.convert_email(email)
+    @passport = PatternMatching.convert_passport(passport)
     @speciality = speciality
-    @experience = experience
-    @previous_work = previous_work
-    @position = position
-    @wage = wage
+    @experience = experience.to_i.zero? ? 0 : experience.to_i
+    @previous_work = @experience.zero? ? 'NA' : previous_work.to_i
+    @position = @experience.zero? ? 'NA' : position.to_i
+    @wage = @experience.zero? ? 0 : wage.to_i
   end
 
   def to_s
